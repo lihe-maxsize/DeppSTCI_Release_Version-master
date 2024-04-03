@@ -1,0 +1,31 @@
+window: &window 5
+
+train:
+  epoch: 200 # 50 change to 100
+
+optimizer:
+  lr: 0.001
+
+scheduler:
+  max_lr: 0.00025
+  total_steps: 150000
+  anneal_strategy: 'cos'
+  pct_start: 0.10
+
+data_loader:
+  batch_size: 64   # 16 change to 64
+  shuffle: False
+
+data_generator:
+  data_x_file: "./Data_conductor/Classifier_data_x_window_5_n450_prediction_avg_i_5_20.npy"
+  data_y_file: "./Data_conductor/Classifier_data_y_window_5_n450_prediction_avg_i_5_20.npy"
+  window: *window
+  n: 10
+  m: 10
+
+data_test:
+  data_x_file: "./Data_conductor/Classifier_data_x_window_5_n450_prediction_avg_i_5_20.npy"
+  data_y_file: "./Data_conductor/Classifier_data_y_window_5_n450_prediction_avg_i_5_20.npy"
+  window: *window
+  n: 10
+  m: 10
